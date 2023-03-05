@@ -49,10 +49,11 @@ class Users extends AbstractTable
     {
         $table
             ->withGlobalSearch(columns: ['id'])
-            ->column('id', sortable: true, searchable: true)
+            ->column('id', sortable: true, searchable: true, canBeHidden: false)
             ->column('email', sortable: true, searchable: true)
             ->column('profile_photo_path')
             ->column('email_verified_at', label: 'Email Verified')
+            ->column('action')
         ;
 
         // ->searchInput()
