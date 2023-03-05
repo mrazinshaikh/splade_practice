@@ -17,15 +17,18 @@
 
         <div class="py-12">
             <div class="flex flex-row justify-center space-x-4">
-                <label class="w-64 cursor-pointer rounded-md shadow-sm bg-white border-2 py-8 px-4 hover:border-green-400 hover:shadow">
+                <Link
+                    href="/user"
+                    class="w-64 cursor-pointer rounded-md shadow-sm bg-white border-2 py-8 px-4 hover:border-green-400 hover:shadow">
                     <div class="text-center">
-                        <span class="font-bold">Plan Basic</span>
+                        <span class="font-bold">Users</span>
                     </div>
-                </label>
+                </Link>
 
-                <label class="w-64 cursor-pointer rounded-md shadow-sm bg-white border-2 py-8 px-4 hover:border-green-400 hover:shadow">
+                <label
+                    class="w-64 cursor-pointer rounded-md shadow-sm bg-white border-2 py-8 px-4 hover:border-green-400 hover:shadow">
                     <div class="text-center">
-                        <span class="font-bold">Plan Pro</span>
+                        <span class="font-bold">Orders</span>
                     </div>
                 </label>
 
