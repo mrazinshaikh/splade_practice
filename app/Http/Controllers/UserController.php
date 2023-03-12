@@ -98,11 +98,18 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(User $user, Request $request)
     {
-        // TODO: not working fix
-        dd($user);
-        $user->delete();
+        if($user instanceof User){
+            try{
+                $user->delete();
+                $request->session()->flash('success', 'User delete successful!');
+            }catch(\Exception $e){
+                $request->session()->flash('danger', 'User delete failed! <br/> Error: '. $e->getMessage());
+            }
+        }else{
+            $request->session()->flash('danger', 'User delete failed!');
+        }
         return redirect(route('user.index'));
     }
 }

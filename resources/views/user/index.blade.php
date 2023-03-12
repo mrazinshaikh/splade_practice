@@ -28,14 +28,9 @@
                             class="bg-blue-400 hover:bg-blue-500 inline-block py-2 px-3 rounded-md border border-gray-300 shadow-sm relative cursor-pointer font-medium text-gray-100 hover:text-gray-300 text-sm focus:outline-none focus:ring focus:ring-opacity-50 focus:border-indigo-300focus:ring-indigo-200 text-center ">
                         Edit
                         </Link>
-                        {{-- <button type="button"
-                            class="inline-block py-2 px-3 rounded-md border border-gray-300 shadow-sm bg-red-500 hover:bg-red-600 relative cursor-pointer font-medium text-gray-100 hover:text-gray-300 text-sm focus:outline-none focus:ring focus:ring-opacity-50 focus:border-indigo-300 focus:ring-indigo-200 text-center">
-                            Delete
-                        </button> --}}
-                        <x-splade-form href="{{ route('user.destroy', $user->id) }}" method="POST   " confirm="Delete User"
+                        <x-splade-form action="{{ route('user.destroy', $user->id) }}" method="delete" confirm="Delete User"
                             confirm-text="Are you sure you want to delete this user?" confirm-button="Yes, delete it!"
                             cancel-button="No, I want to keep it!">
-                            @method('DELETE')
                             <x-splade-submit danger label="Delete" :spinner="true" />
                         </x-splade-form>
                     </div>

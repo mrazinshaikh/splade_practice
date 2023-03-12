@@ -1,6 +1,20 @@
 <x-banner />
 
 <div class="min-h-screen bg-gray-100">
+    <x-splade-flash>
+        {{-- Hello There --}}
+        {{-- <p v-if="flash.has('message')" v-text="flash.message" /> --}}
+        <div v-if="flash.has('danger') || flash.has('success')" data-flash="message">
+            <div v-for="(value, key) in flash" :data-key="key" :data-value="value" v-html="value"
+                class="sticky border z-[999] bg-white left-0 right-0 top-0 p-5"
+                :class="[
+                    { 'text-red-500 border-red-500': key == 'danger' },
+                    { 'text-green-500 border-green-500': key == 'success' },
+                    { 'hidden': typeof value == 'function' }
+                ]">
+            </div>
+        </div>
+    </x-splade-flash>
     <x-navigation />
 
     <!-- Page Heading -->
@@ -10,10 +24,10 @@
                 {{ $header }}
             </div>
         </header>
-    @endif
+        @endif
 
-    <!-- Page Content -->
-    <main>
-        {{ $slot }}
-    </main>
-</div>
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
+    </div>
